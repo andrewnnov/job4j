@@ -5,14 +5,10 @@ public class MatrixCheck {
     public boolean mono(boolean[][] data) {
         boolean result = true;
 
-        for (int h = 0; h < data.length; h++) {
-            for (int w = 0; w < data.length; w++) {
-                if (h == w || h + w == data.length - 1) {
-                    if (data[h][w] != data[0][0]) {
-                        result = false;
-                        break;
-                    }
-                }
+        for (int i = 0; i < data.length; i++) {
+            if (data[i][i] != data[0][0] || data[i][data.length - 1 - i] != data[0][0]) {
+                result = false;
+                break;
             }
         }
         return result;
