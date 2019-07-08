@@ -1,7 +1,6 @@
 package ru.job4j.array;
 
 public class FindLoop {
-
     /**
      * Looking for element in array
      * @param data - input int array

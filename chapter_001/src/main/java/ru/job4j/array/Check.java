@@ -1,7 +1,6 @@
 package ru.job4j.array;
 
 public class Check {
-
     /**
      * Method defines all element in array -equals
      * @param data input array

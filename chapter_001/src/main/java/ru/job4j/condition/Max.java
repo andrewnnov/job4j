@@ -11,7 +11,6 @@ public class Max {
      * @return max number
      */
     public int max(int left, int right) {
-
         return left > right ? left : right;
     }
 }
