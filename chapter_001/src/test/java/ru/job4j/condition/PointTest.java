@@ -33,5 +33,18 @@ public class PointTest {
         second.info();
     }
 
+    @Test
+    public void whenZeroAndTentenThenTen() {
+        Point first = new Point(0, 0, 0);
+        Point second = new Point(0, 10, 10);
+
+        double result = first.distance(second);
+        first.info();
+        second.info();
+        System.out.println(String.format("Result is %s", result));
+        assertThat(result, is(10D));
+    }
+
+
 
 }
