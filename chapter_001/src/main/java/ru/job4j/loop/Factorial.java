@@ -8,7 +8,6 @@ public class Factorial {
      */
     public int calcFactorial(int n) {
         int result = 1;
-
         if (n == 0) {
             return result;
         } else {

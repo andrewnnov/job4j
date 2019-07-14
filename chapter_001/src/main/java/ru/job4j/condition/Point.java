@@ -6,7 +6,6 @@ package ru.job4j.condition;
 public class Point {
 
     private int x;
-
     private int y;
 
     private int z;

@@ -7,8 +7,6 @@ public class ArrayDuplicate {
     public static int countElement = 0;
 
     public String[] remove(String[] array) {
-
-
         for (int i = 0; i < array.length - 1 - countElement; i++) {
             for (int j = 1; j < array.length - 1 - countElement; j++) {
                 if (array[i].equals(array[j + i])) {
@@ -20,7 +18,6 @@ public class ArrayDuplicate {
                 }
             }
         }
-
         return Arrays.copyOf(array, array.length - countElement);
     }
 }

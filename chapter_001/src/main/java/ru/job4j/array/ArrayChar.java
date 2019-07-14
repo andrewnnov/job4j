@@ -11,7 +11,6 @@ public class ArrayChar {
     public boolean startWith(String prefix) {
         boolean result = true;
         char[] value = prefix.toCharArray();
-
         if (value.length > data.length) {
             result = false;
         } else {
