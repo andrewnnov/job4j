@@ -5,6 +5,12 @@ import java.util.Objects;
 public class Item {
 
     private String id;
+
+    @Override
+    public String toString() {
+        return "id заявки - " + getId() + ", имя заявки - " + getName() + ", описание заявки - " + getDesc();
+    }
+
     private String name;
     private String desc;
     private long time;
@@ -13,6 +19,11 @@ public class Item {
         this.name = name;
         this.desc = desc;
         this.time = time;
+    }
+
+    public Item(String name, String desc) {
+        this.name = name;
+        this.desc = desc;
     }
 
     public String getId() {
@@ -47,6 +58,8 @@ public class Item {
         this.time = time;
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -64,4 +77,6 @@ public class Item {
     public int hashCode() {
         return Objects.hash(getId(), getName(), getDesc(), getTime());
     }
+
+
 }
