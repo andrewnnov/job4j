@@ -31,13 +31,13 @@ public class StartUI {
             String answer = this.input.ask("Введите пункт меню: ");
             if (ADD_ITEM.equals(answer)) {
                 this.createItem();
-            }else if (SHOW_ALL_ITEMS.equals(answer)) {
+            } else if (SHOW_ALL_ITEMS.equals(answer)) {
                 this.showAllItems();
-            }else if (EDIT_ITEM.equals(answer)) {
+            } else if (EDIT_ITEM.equals(answer)) {
                 this.editItem();
-            }else if (DELETE_ITEM.equals(answer)) {
+            } else if (DELETE_ITEM.equals(answer)) {
                 this.deleteItem();
-            }else if (FIND_ITEM_BY_ID.equals(answer)) {
+            } else if (FIND_ITEM_BY_ID.equals(answer)) {
                 this.findItemById();
             } else if (FIND_ITEM_BY_NAME.equals(answer)) {
                 this.findItemByName();
@@ -80,7 +80,7 @@ public class StartUI {
 
     private void showAllItems() {
         System.out.println("Список всех заявок: ");
-        for (int i = 0; i < this.tracker.getAll().length ; i++) {
+        for (int i = 0; i < this.tracker.getAll().length; i++) {
             System.out.println(this.tracker.getAll()[i]);
         }
     }
