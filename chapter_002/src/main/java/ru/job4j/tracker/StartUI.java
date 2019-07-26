@@ -61,27 +61,50 @@ public class StartUI {
     }
 
     private void deleteItem() {
+
         System.out.println("Удаление заявки: ");
         String itemId = this.input.ask("Введите Id удаляемой заявки: ");
-        this.tracker.delete(itemId);
-        System.out.println("Заявка с Id " + itemId + " удалена.");
 
+        if(this.tracker.delete(itemId) == true) {
+            System.out.println("Заявка с Id " + itemId + " удалена.");
+        } else {
+            System.out.println("Заявки с Id " + itemId + " не существует!");
+        }
     }
 
     private void editItem() {
         System.out.println("Редактирование заявки: ");
         String itemId = this.input.ask("Введите Id редактируемой заявки: ");
-        String name = this.input.ask("Введите новое имя заявки: ");
-        String desc = this.input.ask("Введите новое описание заявки: ");
-        Item item = new Item(name, desc);
-        this.tracker.replace(itemId, item);
-        System.out.println("Заявка с Id " + item.getId() + " отредактирована.");
+        Item findItem = this.tracker.findById(itemId);
+        if(findItem == null) {
+            System.out.println("Заявки с Id " + itemId + " не существует!");
+        } else {
+            String name = this.input.ask("Введите новое имя заявки: ");
+            String desc = this.input.ask("Введите новое описание заявки: ");
+            Item item = new Item(name, desc);
+            this.tracker.replace(itemId, item);
+            System.out.println("Заявка с Id " + item.getId() + " отредактирована.");
+        }
+
+
+//        String name = this.input.ask("Введите новое имя заявки: ");
+//        String desc = this.input.ask("Введите новое описание заявки: ");
+//        Item item = new Item(name, desc);
+//        boolean isIteminTracker = this.tracker.replace(itemId, item);
+//
+//        if(isIteminTracker == true) {
+//            System.out.println("Заявка с Id " + item.getId() + " отредактирована.");
+//        } else {
+//            System.out.println("Заявки с Id " + itemId + " не существует!");
+//        }
+
     }
 
     private void showAllItems() {
         System.out.println("Список всех заявок: ");
-        for (int i = 0; i < this.tracker.getAll().length; i++) {
-            System.out.println(this.tracker.getAll()[i]);
+        Item[] items = this.tracker.getAll();
+        for (int i = 0; i < items.length; i++) {
+            System.out.println(items[i]);
         }
     }
 
@@ -91,7 +114,7 @@ public class StartUI {
         String desc = this.input.ask("Введите описание заявки: ");
         Item item = new Item(name, desc);
         this.tracker.add(item);
-        System.out.println("New item with id " + item.getId() + "created. ");
+        System.out.println("New item with id " + item.getId() + " created. ");
     }
 
     private void showMenu() {
