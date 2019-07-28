@@ -55,10 +55,12 @@ public class StartUITest {
         Item item1 = new Item("test2", "desc3", 765L);
         tracker.add(item);
         tracker.add(item1);
+        Item[] expectedItem = {item, item1};
         String id = tracker.getAll()[1].getId();
         Input input = new StubInput(new String[] {"5", "test2", "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findByName("test2")[1].getId(), is(id));
+        Item[] resultItem = tracker.findByName("test2");
+        assertThat(resultItem, is(expectedItem));
     }
 
     @Test
@@ -82,9 +84,11 @@ public class StartUITest {
         Item item1 = new Item("test3", "desc3", 765L);
         tracker.add(item);
         tracker.add(item1);
+        Item[] expectedItem = {item, item1};
         Input input = new StubInput(new String[] {"1", "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.getAll()[1].getName(), is("test3"));
+        Item[] resultItem = tracker.getAll();
+        assertThat(resultItem, is(expectedItem));
     }
 
 }
