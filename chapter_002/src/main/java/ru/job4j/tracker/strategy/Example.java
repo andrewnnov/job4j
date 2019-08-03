@@ -1,13 +1,14 @@
 package ru.job4j.tracker.strategy;
 
-public class Triangle implements Shape {
-    @Override
-    public String draw() {
+public class Example {
+
+    public static void main(String[] args) {
         StringBuilder pic = new StringBuilder();
         pic.append("+").append(System.lineSeparator());
         pic.append("++").append(System.lineSeparator());
         pic.append("+++").append(System.lineSeparator());
         pic.append("++++").append(System.lineSeparator());
-        return pic.toString();
+
+        System.out.println(pic.toString());
     }
 }
