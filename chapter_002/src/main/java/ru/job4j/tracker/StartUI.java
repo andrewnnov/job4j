@@ -44,7 +44,6 @@ public class StartUI {
             } else if (EXIT.equals(answer)) {
                 break;
             }
-
         }
     }
 
@@ -103,7 +102,7 @@ public class StartUI {
         String desc = this.input.ask("Введите описание заявки: ");
         Item item = new Item(name, desc);
         this.tracker.add(item);
-        System.out.println("New item with id " + item.getId() + " created. ");
+        System.out.println("Новая заявка с id " + item.getId() + " создана.");
     }
 
     private void showMenu() {
@@ -124,8 +123,8 @@ public class StartUI {
     public static void main(String[] args) {
 
         new StartUI(new ConsoleInput(), new Tracker()).init();
-
-
-
     }
+
+
+
 }
