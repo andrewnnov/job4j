@@ -31,12 +31,12 @@ public class MenuTracker {
      */
 
     public void fillActions() {
-        this.action.add(new AddItem());
-        this.action.add(new ShowAllItem());
-        this.action.add(new EditItem());
-        this.action.add(new DeleteItem());
-        this.action.add(new FindItemById());
-        this.action.add(new FindItemByName());
+        this.action.add(0, new AddItem());
+        this.action.add(1, new ShowAllItem());
+        this.action.add(2, new EditItem());
+        this.action.add(3, new DeleteItem());
+        this.action.add(4, new FindItemById());
+        this.action.add(5, new FindItemByName());
     }
 
     public void select(int key) {
