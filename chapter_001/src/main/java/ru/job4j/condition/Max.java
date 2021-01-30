@@ -15,14 +15,24 @@ public class Max {
     }
 
 
+//    public int max(int one, int second, int third) {
+//        int compareOfTwo =  max(second, third);
+//        return one > compareOfTwo ? one : compareOfTwo;
+//    }
+
     public int max(int one, int second, int third) {
-        int compareOfTwo =  max(second, third);
-        return one > compareOfTwo ? one : compareOfTwo;
+        return max(max(one, second), third);
     }
 
+//    public int max(int one, int second, int third, int fourth) {
+//        int compareOfThree =  max(second, third, fourth);
+//        return one > compareOfThree ? one : compareOfThree;
+//    }
+
     public int max(int one, int second, int third, int fourth) {
-        int compareOfThree =  max(second, third, fourth);
-        return one > compareOfThree ? one : compareOfThree;
+        return max(max(one, second, third), fourth);
     }
+
+
 
 }
