@@ -17,14 +17,13 @@ public class PriorityQueue {
 
         if(tasks.isEmpty()) {
             this.tasks.add(index, task);
-            index++;
         }
 
         for (Task element : tasks) {
-            if(task.getPriority() > element.getPriority()) {
-                index++;
+            if(element.getPriority() > task.getPriority()) {
+                break;
             }
-
+            index++;
         }
         this.tasks.add(index, task);
 
