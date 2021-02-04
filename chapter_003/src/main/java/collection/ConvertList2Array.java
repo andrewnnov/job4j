@@ -14,7 +14,7 @@ public class ConvertList2Array {
         int numberOfElement = 0;
 
         for (int k = 0; k < list.size() - 1; k++) {
-            for (cell = 0; cell < groups; cell++) {
+            for (cell = 0; cell < cells; cell++) {
                 if(numberOfElement == list.size()) {
                     break;
                 }
