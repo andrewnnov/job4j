@@ -11,17 +11,14 @@ public class ConvertList2Array {
         int[][] array = new int[groups][cells];
         int row = 0;
         int cell = 0;
-        int numberOfElement = 0;
 
-        for (int k = 0; k < list.size() - 1; k++) {
-            for (cell = 0; cell < cells; cell++) {
-                if(numberOfElement == list.size()) {
-                    break;
-                }
-                array[row][cell] = list.get(numberOfElement++);
+        for (Integer num : list) {
+            if(cell == cells) {
+                row++;
+                cell = 0;
             }
-            row++;
-            cell = 0;
+            array[row][cell] = num;
+            cell++;
         }
 
         return array;
