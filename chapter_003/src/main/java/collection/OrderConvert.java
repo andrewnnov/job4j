@@ -8,7 +8,7 @@ public class OrderConvert {
     public static HashMap<String, Order> process(List<Order> orders) {
         HashMap<String, Order> map = new HashMap<>();
         for (Order elementOfOrder: orders) {
-            map.put(String.valueOf(elementOfOrder.getNumber()), elementOfOrder);
+            map.put(elementOfOrder.getNumber(), elementOfOrder);
         }
         return map;
     }
