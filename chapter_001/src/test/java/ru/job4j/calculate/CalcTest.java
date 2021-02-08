@@ -32,4 +32,14 @@ public class CalcTest {
         assertThat(actualRes, is(expectedRes));
     }
 
+    @Test
+    public void when4x4ThenEqual16() {
+        Calc calc = new Calc();
+        double expectedRes = 16d;
+        double actualRes = calc.add(4d, 4d, 4d, 4d);
+        assertThat(actualRes, is(expectedRes));
+    }
+
+
+
 }
